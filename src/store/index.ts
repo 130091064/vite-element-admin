@@ -1,9 +1,14 @@
-import { createStore } from "vuex";
-import app from "./modules/app";
+import { createStore, StoreOptions } from "vuex";
+import { RootState } from "./types";
+import user from "./modules/user";
 
-const store = createStore({
+const store: StoreOptions<RootState> = createStore({
+  state: {
+    version: '1.0.0',
+    language: 'zh'
+  },
   modules: {
-    app,
+    user,
   },
 });
 
